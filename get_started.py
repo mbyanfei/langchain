@@ -2,7 +2,7 @@
 from langchain.llms import OpenAI
 #%%
 import os
-os.environ["OPENAI_API_KEY"]="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"
+os.environ["OPENAI_API_KEY"]="xxx"
 #%%
 !echo $OPENAI_API_KEY
 #%%
