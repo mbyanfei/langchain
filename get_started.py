@@ -1,8 +1,14 @@
 #%%
+!pip install langchain
+#%%
+!pip install openai
+#%%
+!pip install google-search-results
+#%%
 from langchain.llms import OpenAI
 #%%
 import os
-os.environ["OPENAI_API_KEY"]="xxx"
+os.environ["OPENAI_API_KEY"]="xxxx"
 #%%
 !echo $OPENAI_API_KEY
 #%%
@@ -31,7 +37,7 @@ from langchain.llms import OpenAI
 # First, let's load the language model we're going to use to control the agent.
 llm = OpenAI(temperature=0)
 #%%
-os.environ["SERPAPI_API_KEY"]="1486ff9c52b823c5dc7fa0c0971065f8886e5d32fe148d7f340a7ac0539bb83b"
+os.environ["SERPAPI_API_KEY"]="yyyy"
 #%%
 # Next, let's load some tools to use. Note that the `llm-math` tool uses an LLM, so we need to pass that in.
 tools = load_tools(["serpapi", "llm-math"], llm=llm)
@@ -50,3 +56,13 @@ conversation = ConversationChain(llm=llm, verbose=True)
 conversation.predict(input="Hi there!")
 #%%
 conversation.predict(input="I'm doing well! Just having a conversation with an AI.")
+#%%
+conversation.predict(input="Let's talk about ChatGPT, what do you know about it?")
+#%%
+conversation.predict(input="Tell me a joke about ChatGPT? then write a poem about it?")
+#%%
+conversation.predict(input="No joke on ChatGPT? or any joke?")
+#%%
+conversation.predict(input="yes, go ahead ...")
+#%%
+conversation.predict(input="haha, funny, one more?")
